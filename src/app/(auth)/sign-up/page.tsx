@@ -16,7 +16,7 @@ import {
 import { trpc } from "@/trpc/client";
 import { toast } from 'sonner';
 import { ZodError } from "zod";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const {
@@ -84,6 +84,9 @@ const Page = () => {
                     })}
                     placeholder="you@example.com"
                   />
+                  {errors?.email && (
+                    <p className='text-sm text-red-500'>{errors.email.message}</p>
+                  )}
                 </div>
                 <div className="grid gap-1 py-2">
                   <Label htmlFor="password">Password</Label>
@@ -95,6 +98,9 @@ const Page = () => {
                     type="password"
                     placeholder="Password"
                   />
+                  {errors?.password && (
+                    <p className='text-sm text-red-500'>{errors.password.message}</p>
+                  )}
                 </div>
                 <Button>Sign up</Button>
               </div>
