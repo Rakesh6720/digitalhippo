@@ -14,7 +14,7 @@ export default function VerifyEmailPage({ searchParams }: PageProps) {
     <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-">
       <div className="mx-auto flex flex-col justify-center w-full space-y-6 sm:w-p[350px]">
         {token && typeof token === "string" ? (
-          <div className="grd gap-6">
+        <div className="grd gap-6">
             <VerifyEmail token={token} />
           </div>
         ) : (
